@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 289129404}
   - component: {fileID: 289129403}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,9 +1850,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 289129402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f641d18e76e1ea849b0a5bd45760158d, type: 3}
+  m_Script: {fileID: 11500000, guid: d027f3454bddac94b9a8f168ff581d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: BaseLayout
 --- !u!4 &289129404
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,7 +1862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289129402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.066361785, y: 0.06625758, z: -20.013859}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3149,6 +3150,7 @@ MonoBehaviour:
     type: 3}
   interactedWith: 0
   freezeInteractedWith: 0
+  gameManager: {fileID: 289129402}
 --- !u!61 &1316605317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3525,3 +3527,4 @@ MonoBehaviour:
   deInteractedSprite: {fileID: 21300000, guid: 899a6ffc43ed1424d95062ef0053fada, type: 3}
   interactedWith: 0
   freezeInteractedWith: 0
+  gameManager: {fileID: 289129402}

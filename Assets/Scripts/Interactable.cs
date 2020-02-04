@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
     public Sprite deInteractedSprite;
     public bool interactedWith = false;
     public bool freezeInteractedWith = false;
+    public GameObject gameManager;
     void OnTriggerEnter2D(Collider2D other)
     {
         // If other is player X then true
@@ -39,5 +40,6 @@ public class Interactable : MonoBehaviour
         // If both players are on their interactable objects then the level is clear and they can move on
         interactedWith = true;
         freezeInteractedWith = true;
+        gameManager.GetComponent<GameManager>().ChangeLevel();
     }
 }
