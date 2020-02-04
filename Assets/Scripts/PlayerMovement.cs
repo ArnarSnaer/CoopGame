@@ -7,11 +7,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight = 5f;
     private Rigidbody2D rb;
+    private Transform tf;
 
     private float h = 0f;
     private float v = 0f;
     private bool grounded;
     private bool isGhost;
+
+    private bool canTransform = true;
 
     float startSpeed;
 
@@ -20,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         startSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
+        tf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -28,13 +32,28 @@ public class PlayerMovement : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(grounded);
+    }
+
+    IEnumerator Cooldown(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        canTransform = true;
     }
 
     private void FixedUpdate() 
     {
-        if (v < 0)
+        if (v < 0 && grounded && canTransform)
             {
+                // change form
+                if (isGhost) rb.gravityScale = 1;
+                else rb.gravityScale = 0;
+                
+                if (isGhost) tf.localScale = new Vector3(0.1f, 0.1f, 1f);
+                else tf.localScale = new Vector3(0.3f, 0.1f, 1f);
+
+                canTransform = false;
+                StartCoroutine(Cooldown(1f));
+                
                 isGhost = !isGhost;
             }
 
@@ -47,17 +66,19 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = moveVect1;
 
             // jump
-            if (v > 0 && grounded)
+            if (v > 0.9f && grounded)
             {
                 Debug.Log("Jump!");
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
-            }
+            }            
         }
 
         else
         {
             // ghost movement
-            // Hvernig á hann að hreyfa sig niður eða breyta sér aftur til baka?
+            Vector2 tempVect1 = new Vector2(h, v);
+            Vector2 moveVect1 = tempVect1 * speed;
+            rb.velocity = moveVect1;
         }
 
     }
