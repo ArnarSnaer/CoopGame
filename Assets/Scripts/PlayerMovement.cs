@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {    
+    public string playerIndex;
     public float speed = 5f;
     public float jumpHeight = 5f;
     private Rigidbody2D rb;
@@ -29,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        h = Input.GetAxisRaw("Horizontal" + playerIndex);
+        v = Input.GetAxisRaw("Vertical" + playerIndex);
 
     }
 
