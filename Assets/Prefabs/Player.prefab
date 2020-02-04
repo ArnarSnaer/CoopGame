@@ -144,4 +144,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 
   speed: 7
-  jumpHeight: 5
+  jumpHeight: 3.5

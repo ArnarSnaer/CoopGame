@@ -83,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
             // jump
             if (v > 0 && grounded)
             {
-                Debug.Log("Jump!");
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
             }            
         }
