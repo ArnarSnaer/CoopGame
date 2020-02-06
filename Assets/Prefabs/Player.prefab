@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 1186851763306509816}
   - component: {fileID: 4186494868642590143}
   - component: {fileID: 2315379624288103289}
-  - component: {fileID: 4538155463571831}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: RedPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9123760820287473811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -116.98847, y: -99.94403, z: 0}
+  m_LocalPosition: {x: -4.06, y: -3.38, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,10 +49,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 81718bc86293a1849afb938793ca1a9b, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &4186494868642590143
 SpriteRenderer:
@@ -94,7 +93,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52851d1a1f7c49744839de92eabf3123, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.454902, b: 0.09411766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,113 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71cf5e329d28a9d49811dc99e660afcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 
+  playerIndex: 1
   speed: 7
-  jumpHeight: 3.5
---- !u!60 &4538155463571831
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123760820287473811}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 3.3799999, y: -5.0099998}
-      - {x: 3.56, y: -4.94}
-      - {x: 3.78, y: -4.8399997}
-      - {x: 3.9499998, y: -4.74}
-      - {x: 4.04, y: -4.68}
-      - {x: 4.15, y: -4.5899997}
-      - {x: 4.27, y: -4.49}
-      - {x: 4.49, y: -4.27}
-      - {x: 4.5499997, y: -4.2}
-      - {x: 4.63, y: -4.11}
-      - {x: 4.74, y: -3.9499998}
-      - {x: 4.7999997, y: -3.85}
-      - {x: 4.8399997, y: -3.78}
-      - {x: 4.9, y: -3.6499999}
-      - {x: 4.94, y: -3.56}
-      - {x: 4.99, y: -3.4299998}
-      - {x: 5.04, y: -3.28}
-      - {x: 5.0899997, y: -3.08}
-      - {x: 5.12, y: -2.8999999}
-      - {x: 5.12, y: 2.8899999}
-      - {x: 5.1099997, y: 2.96}
-      - {x: 5.08, y: 3.1299999}
-      - {x: 5.0699997, y: 3.21}
-      - {x: 5.02, y: 3.3799999}
-      - {x: 4.94, y: 3.56}
-      - {x: 4.8399997, y: 3.78}
-      - {x: 4.74, y: 3.9499998}
-      - {x: 4.68, y: 4.04}
-      - {x: 4.63, y: 4.11}
-      - {x: 4.5499997, y: 4.21}
-      - {x: 4.2799997, y: 4.49}
-      - {x: 4.2, y: 4.5499997}
-      - {x: 4.04, y: 4.68}
-      - {x: 3.8999999, y: 4.77}
-      - {x: 3.6499999, y: 4.9}
-      - {x: 3.56, y: 4.94}
-      - {x: 3.4299998, y: 4.99}
-      - {x: 3.28, y: 5.04}
-      - {x: 3.1999998, y: 5.0699997}
-      - {x: 3.02, y: 5.1}
-      - {x: 2.8899999, y: 5.12}
-      - {x: -2.8899999, y: 5.12}
-      - {x: -2.96, y: 5.1099997}
-      - {x: -3.1299999, y: 5.08}
-      - {x: -3.21, y: 5.0699997}
-      - {x: -3.3799999, y: 5.0099998}
-      - {x: -3.56, y: 4.94}
-      - {x: -3.78, y: 4.8399997}
-      - {x: -3.9499998, y: 4.74}
-      - {x: -4.11, y: 4.63}
-      - {x: -4.21, y: 4.5499997}
-      - {x: -4.49, y: 4.27}
-      - {x: -4.63, y: 4.11}
-      - {x: -4.74, y: 3.9499998}
-      - {x: -4.7999997, y: 3.85}
-      - {x: -4.9, y: 3.6499999}
-      - {x: -4.99, y: 3.4399998}
-      - {x: -5.04, y: 3.28}
-      - {x: -5.0899997, y: 3.08}
-      - {x: -5.12, y: 2.8999999}
-      - {x: -5.12, y: -2.8899999}
-      - {x: -5.1099997, y: -2.96}
-      - {x: -5.08, y: -3.1299999}
-      - {x: -5.0699997, y: -3.21}
-      - {x: -5.0099998, y: -3.3799999}
-      - {x: -4.94, y: -3.56}
-      - {x: -4.8399997, y: -3.78}
-      - {x: -4.74, y: -3.9499998}
-      - {x: -4.63, y: -4.11}
-      - {x: -4.5499997, y: -4.21}
-      - {x: -4.27, y: -4.49}
-      - {x: -4.11, y: -4.63}
-      - {x: -4.0299997, y: -4.68}
-      - {x: -3.85, y: -4.7999997}
-      - {x: -3.6499999, y: -4.9}
-      - {x: -3.4299998, y: -4.99}
-      - {x: -3.28, y: -5.04}
-      - {x: -3.08, y: -5.0899997}
-      - {x: -2.8999999, y: -5.12}
-      - {x: 2.8899999, y: -5.12}
-      - {x: 3.1299999, y: -5.0899997}
-      - {x: 3.32, y: -5.0299997}
+  jumpHeight: 5
