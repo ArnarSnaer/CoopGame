@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{    
+{
     public string playerIndex;
     public float speed = 5f;
     public float jumpHeight = 5f;
@@ -52,25 +52,25 @@ public class PlayerMovement : MonoBehaviour
         canTransform = true;
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         if (v < 0 && grounded && canTransform)
-            {
-                // change form
-                if (isGhost) rb.gravityScale = 1;
-                else rb.gravityScale = 0;
-                
-                if (isGhost) tf.localScale = new Vector3(0.1f, 0.1f, 1f);
-                else tf.localScale = new Vector3(0.3f, 0.1f, 1f);
+        {
+            // change form
+            if (isGhost) rb.gravityScale = 1;
+            else rb.gravityScale = 0;
 
-                if (isGhost) sr.color = baseColor;
-                else sr.color = tempColor;
+            if (isGhost) tf.localScale = new Vector3(0.1f, 0.1f, 1f);
+            else tf.localScale = new Vector3(0.3f, 0.1f, 1f);
 
-                canTransform = false;
-                StartCoroutine(Cooldown(1f));
-                
-                isGhost = !isGhost;
-            }
+            if (isGhost) sr.color = baseColor;
+            else sr.color = tempColor;
+
+            canTransform = false;
+            StartCoroutine(Cooldown(1f));
+
+            isGhost = !isGhost;
+        }
 
         if (!isGhost)
         {
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (v > 0 && grounded)
             {
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
-            }            
+            }
         }
 
         else
@@ -112,15 +112,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnCollisionEnter2D(Collision2D other)
     {
         // Change this so that the tag is "ground" so it can only be reset on touching the ground
         grounded = true;
         speed = startSpeed;
-        
     }
 
-    private void OnCollisionExit2D(Collision2D other) 
+    private void OnCollisionExit2D(Collision2D other)
     {
         grounded = false;
         speed = 3f;
