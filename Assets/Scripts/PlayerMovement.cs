@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{    
+{
     public string playerIndex;
     public float speed = 5f;
     public float jumpHeight = 5f;
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         cooldownBool = true;
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         // change form     
         if (v < 0 && grounded && cooldownBool && canTransform)
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             if (v > 0 && grounded)
             {
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
-            }            
+            }
         }
 
         else
@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) 
+    private void OnCollisionExit2D(Collision2D other)
     {
         grounded = false;
         speed = 3f;

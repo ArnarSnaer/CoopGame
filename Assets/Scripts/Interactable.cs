@@ -40,6 +40,6 @@ public class Interactable : MonoBehaviour
         // If both players are on their interactable objects then the level is clear and they can move on
         interactedWith = true;
         freezeInteractedWith = true;
-        gameManager.GetComponent<GameManager>().ChangeLevel();
+        gameManager.GetComponent<GameManager>().LevelClear();
     }
 }

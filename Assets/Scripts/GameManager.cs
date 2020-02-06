@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public string nextLevel;
+    public GameObject door;
+    public bool player1ThroughDoor, player2ThroughDoor = false;
     void Update()
     {
         if (Input.GetAxisRaw("Cancel") > 0)
@@ -20,8 +22,43 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LevelClear()
+    {
+        //Play Lift Door Animation
+        //Temporary Fix
+        door.transform.position = new Vector3(door.transform.position.x, door.transform.position.y + 3, door.transform.position.z);
+    }
+
     public void ChangeLevel()
     {
         SceneManager.LoadScene(nextLevel);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "RedPlayer")
+        {
+            player1ThroughDoor = true;
+        }
+        else if (other.tag == "BluePlayer")
+        {
+            player2ThroughDoor = true;
+        }
+        if (player1ThroughDoor && player2ThroughDoor)
+        {
+            //Play Walkout Animation then Change Level Animation
+            //Temporary Fix
+            ChangeLevel();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "RedPlayer")
+        {
+            player1ThroughDoor = false;
+        }
+        else if (other.tag == "BluePlayer")
+        {
+            player2ThroughDoor = false;
+        }
     }
 }
