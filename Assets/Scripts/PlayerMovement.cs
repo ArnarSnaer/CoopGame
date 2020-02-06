@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isGhost;
     private bool cooldownBool = true;
     private bool canTransform = false;
-    private bool inZone;
 
 
     // Start is called before the first frame update
