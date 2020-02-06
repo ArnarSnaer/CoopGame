@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight = 5f;
     float startSpeed;
-    
+
     private Rigidbody2D rb;
     private Transform tf;
     private SpriteRenderer sr;
@@ -57,24 +57,24 @@ public class PlayerMovement : MonoBehaviour
     {
         // change form     
         if (v < 0 && grounded && cooldownBool && canTransform)
+        {
+            if (isGhost) // turn to normal
             {
-                if (isGhost) // turn to normal
-                {
-                    rb.gravityScale = 1;
-                    tf.localScale = new Vector3(0.1f, 0.1f, 1f);
-                    sr.color = baseColor;
-                }
-                else if (!isGhost) // turn to ghost
-                {
-                    rb.gravityScale = 0;
-                    tf.localScale = new Vector3(0.3f, 0.1f, 1f);
-                    sr.color = tempColor;
-                }
-
-                cooldownBool = false;
-                StartCoroutine(Cooldown(1f));
-                isGhost = !isGhost;
+                rb.gravityScale = 1;
+                tf.localScale = new Vector3(0.1f, 0.1f, 1f);
+                sr.color = baseColor;
             }
+            else if (!isGhost) // turn to ghost
+            {
+                rb.gravityScale = 0;
+                tf.localScale = new Vector3(0.3f, 0.1f, 1f);
+                sr.color = tempColor;
+            }
+
+            cooldownBool = false;
+            StartCoroutine(Cooldown(1f));
+            isGhost = !isGhost;
+        }
 
         // Movement
         if (!isGhost)
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Colliders
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Ground")
         {
@@ -135,13 +135,13 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
         speed = 3f;
     }
-    
-    private void OnCollisionStay2D(Collision2D other) 
+
+    private void OnCollisionStay2D(Collision2D other)
     {
-        grounded = true;    
+        grounded = true;
     }
 
     // Triggers
-    private void OnTriggerEnter2D(Collider2D other){canTransform = true;}
-    private void OnTriggerExit2D(Collider2D other) {canTransform = false;}
+    private void OnTriggerEnter2D(Collider2D other) { canTransform = true; }
+    private void OnTriggerExit2D(Collider2D other) { canTransform = false; }
 }
