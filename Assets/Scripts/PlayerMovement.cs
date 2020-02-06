@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpHeight = 5f;
     float startSpeed;
-    
+
     private Rigidbody2D rb;
     private Transform tf;
     private SpriteRenderer sr;
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGhost;
     private bool cooldownBool = true;
     private bool canTransform = false;
+    private bool inZone;
 
 
     // Start is called before the first frame update
@@ -42,9 +43,6 @@ public class PlayerMovement : MonoBehaviour
     {
         h = Input.GetAxisRaw("Horizontal" + playerIndex);
         v = Input.GetAxisRaw("Vertical" + playerIndex);
-
-        Debug.Log("Horizontal" + playerIndex);
-
     }
 
     IEnumerator Cooldown(float waitTime)
@@ -57,24 +55,24 @@ public class PlayerMovement : MonoBehaviour
     {
         // change form     
         if (v < 0 && grounded && cooldownBool && canTransform)
+        {
+            if (isGhost) // turn to normal
             {
-                if (isGhost) // turn to normal
-                {
-                    rb.gravityScale = 1;
-                    tf.localScale = new Vector3(0.1f, 0.1f, 1f);
-                    sr.color = baseColor;
-                }
-                else if (!isGhost) // turn to ghost
-                {
-                    rb.gravityScale = 0;
-                    tf.localScale = new Vector3(0.3f, 0.1f, 1f);
-                    sr.color = tempColor;
-                }
-
-                cooldownBool = false;
-                StartCoroutine(Cooldown(1f));
-                isGhost = !isGhost;
+                rb.gravityScale = 1;
+                tf.localScale = new Vector3(0.1f, 0.1f, 1f);
+                sr.color = baseColor;
             }
+            else if (!isGhost) // turn to ghost
+            {
+                rb.gravityScale = 0;
+                tf.localScale = new Vector3(0.3f, 0.1f, 1f);
+                sr.color = tempColor;
+            }
+
+            cooldownBool = false;
+            StartCoroutine(Cooldown(1f));
+            isGhost = !isGhost;
+        }
 
         // Movement
         if (!isGhost)
@@ -88,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
             // jump
             if (v > 0 && grounded)
             {
+                Debug.Log("a");
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
             }
         }
@@ -120,28 +119,33 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Colliders
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Ground")
         {
-            // Change this so that the tag is "ground" so it can only be reset on touching the ground
             grounded = true;
             speed = startSpeed;
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
         grounded = false;
         speed = 3f;
+        Debug.Log(grounded);
+
     }
-    
-    private void OnCollisionStay2D(Collision2D other) 
+
+    private void OnCollisionStay2D(Collision2D other)
     {
-        grounded = true;    
+        if (other.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 
     // Triggers
-    private void OnTriggerEnter2D(Collider2D other){canTransform = true;}
-    private void OnTriggerExit2D(Collider2D other) {canTransform = false;}
+    private void OnTriggerEnter2D(Collider2D other) { canTransform = true; }
+    private void OnTriggerExit2D(Collider2D other) { canTransform = false; }
 }
