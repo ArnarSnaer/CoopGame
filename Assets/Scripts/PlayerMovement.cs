@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGhost;
     private bool cooldownBool = true;
     private bool canTransform = false;
+    private bool inZone;
 
 
     // Start is called before the first frame update
@@ -42,9 +43,6 @@ public class PlayerMovement : MonoBehaviour
     {
         h = Input.GetAxisRaw("Horizontal" + playerIndex);
         v = Input.GetAxisRaw("Vertical" + playerIndex);
-
-        Debug.Log("Horizontal" + playerIndex);
-
     }
 
     IEnumerator Cooldown(float waitTime)
@@ -76,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
                 isGhost = !isGhost;
             }
 
-        // Movement
+        // Movement & jump
         if (!isGhost)
         {
             // normal movement
@@ -88,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
             // jump
             if (v > 0 && grounded)
             {
+                Debug.Log("a");
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
             }
         }
@@ -124,21 +123,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            // Change this so that the tag is "ground" so it can only be reset on touching the ground
             grounded = true;
             speed = startSpeed;
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
         grounded = false;
         speed = 3f;
+        Debug.Log(grounded);
+
     }
     
     private void OnCollisionStay2D(Collision2D other) 
     {
-        grounded = true;    
+        if (other.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 
     // Triggers
