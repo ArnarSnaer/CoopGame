@@ -8,6 +8,8 @@ TagManager:
   - BluePlayer
   - Ground
   - GhostZone
+  - RedPlayerPlatform
+  - BluePlayerPlatform
   layers:
   - Default
   - TransparentFX

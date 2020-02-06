@@ -125,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         sr.color = baseColor;
         isGhost = false;
         
+        SetTag();
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
     }
@@ -137,14 +138,29 @@ public class PlayerMovement : MonoBehaviour
         sr.color = tempColor;
         isGhost = true;
 
+        SetTag();
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
+    }
+
+    private void SetTag()
+    {
+        if (isGhost)
+        {
+            if (playerIndex == "1") gameObject.tag = "RedPlayerPlatform";
+            else gameObject.tag = "BluePlayerPlatform";
+        }
+        else
+        {
+            if (playerIndex == "1") gameObject.tag = "RedPlayer";
+            else gameObject.tag = "BluePlayer";
+        }
     }
 
     // Colliders
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
             grounded = true;
             speed = startSpeed;
@@ -153,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
             grounded = false;
             speed = 3f;
@@ -163,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
             grounded = true;
         }
@@ -174,7 +190,6 @@ public class PlayerMovement : MonoBehaviour
     { 
         if (other.gameObject.tag == "GhostZone")
         {
-            Debug.Log("do it");
             canTransform = true;
         } 
     }
