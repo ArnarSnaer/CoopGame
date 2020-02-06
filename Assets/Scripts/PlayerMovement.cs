@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D zrb;
     private Transform tf;
     private SpriteRenderer sr;
+    private CircleCollider2D cc;
 
     private Color baseColor;
     private Color tempColor;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         zrb = rb.GetComponentInChildren<Rigidbody2D>();
         tf = GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
+        cc = GetComponent<CircleCollider2D>();
 
         baseColor = sr.color;
         tempColor = baseColor;
@@ -113,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void TurnToNormal()
     {
+        cc.enabled = true;
         rb.gravityScale = 1;
         tf.localScale = new Vector3(0.1f, 0.1f, 1f);
         sr.color = baseColor;
@@ -124,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void TurnToGhost()
     {
+        cc.enabled = false;
         rb.gravityScale = 0;
         tf.localScale = new Vector3(0.2f, 0.06f, 1f);
         sr.color = tempColor;
