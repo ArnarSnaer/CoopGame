@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RedPlayer
   - BluePlayer
+  - Ground
   layers:
   - Default
   - TransparentFX
