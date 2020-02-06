@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 812961175}
+  canBeInteractedBy: {fileID: 0}
   otherInteractable: {fileID: 1834203209}
   interactedSprite: {fileID: 21300000, guid: 54f97af903ffdc24a975484f1bd997fd, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 46ed5848cb88ea148ac89c9bb3b7fa62, type: 3}
@@ -2987,12 +2987,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481a71eb60bf4bc44b87ee8638458433, type: 3}
---- !u!61 &812961175 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 6240895260116445530, guid: 481a71eb60bf4bc44b87ee8638458433,
-    type: 3}
-  m_PrefabInstance: {fileID: 560878498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961254769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,12 +3584,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!61 &1463179779 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 6240895260116445530, guid: 481a71eb60bf4bc44b87ee8638458433,
-    type: 3}
-  m_PrefabInstance: {fileID: 71328065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1834203209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 1463179779}
+  canBeInteractedBy: {fileID: 0}
   otherInteractable: {fileID: 22642918}
   interactedSprite: {fileID: 21300000, guid: 0912d43b3112b034998f5d8c3fd32183, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 899a6ffc43ed1424d95062ef0053fada, type: 3}
