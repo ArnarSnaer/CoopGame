@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Color baseColor;
     private Color tempColor;
+    private Vector3 baseSize;
+    private Vector3 ghostSize;
 
     private float h = 0f;
     private float v = 0f;
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         baseColor = sr.color;
         tempColor = baseColor;
         tempColor.a = 120f;
+        baseSize = tf.localScale;
+        ghostSize = new Vector3 (0.1f, 0.03f, 1f);
     }
 
     // Update is called once per frame
@@ -57,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // change form     
-        if (v < 0 && grounded && cooldownBool && canTransform)
+        if (v < 0 && cooldownBool && canTransform)
         {
             if (isGhost) // turn to normal
             {
@@ -117,24 +121,24 @@ public class PlayerMovement : MonoBehaviour
     {
         cc.enabled = true;
         rb.gravityScale = 1;
-        tf.localScale = new Vector3(0.1f, 0.1f, 1f);
+        tf.localScale = baseSize;
         sr.color = baseColor;
         isGhost = false;
         
         cooldownBool = false;
-        StartCoroutine(Cooldown(1f));
+        StartCoroutine(Cooldown(0.5f));
     }
 
     private void TurnToGhost()
     {
         cc.enabled = false;
         rb.gravityScale = 0;
-        tf.localScale = new Vector3(0.2f, 0.06f, 1f);
+        tf.localScale = ghostSize;
         sr.color = tempColor;
         isGhost = true;
 
         cooldownBool = false;
-        StartCoroutine(Cooldown(1f));
+        StartCoroutine(Cooldown(0.5f));
     }
 
     // Colliders
@@ -170,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
     { 
         if (other.gameObject.tag == "GhostZone")
         {
+            Debug.Log("do it");
             canTransform = true;
         } 
     }
