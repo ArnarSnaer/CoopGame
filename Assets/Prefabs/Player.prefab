@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3527972650019155222}
   - component: {fileID: 4919200240218357978}
   - component: {fileID: 2116413386891310488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloorDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2315379624288103289}
   - component: {fileID: 1994299630035385745}
   - component: {fileID: 261797721865499547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 81718bc86293a1849afb938793ca1a9b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
