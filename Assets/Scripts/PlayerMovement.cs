@@ -158,32 +158,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Colliders
-    private void OnCollisionEnter2D(Collision2D other)
+    public void TouchFloor()
     {
-        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
-        {
-            grounded = true;
-            speed = startSpeed;
-        }        
+        grounded = true;
+        speed = startSpeed;
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    public void LeaveFloor()
     {
-        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
-        {
-            grounded = false;
-            speed = 3f;
-        }
-    
+        grounded = false;
+        speed = 3f;
     }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
-        {
-            grounded = true;
-        }
-    }
 
     // Triggers
     private void OnTriggerEnter2D(Collider2D other) 
@@ -193,7 +179,6 @@ public class PlayerMovement : MonoBehaviour
             canTransform = true;
         } 
     }
-    
 
     public void ChildLeftZone(Collider2D zone)
     {
