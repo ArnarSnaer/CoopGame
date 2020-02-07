@@ -17,6 +17,7 @@ public class FloorDetector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
             parent.TouchFloor();
