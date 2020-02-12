@@ -11,6 +11,7 @@ public class StartGameTimer : MonoBehaviour
 	public float gameTimer = 120f;
 	public TextMeshProUGUI timerText;
 	public bool winState;
+	public bool inGame = false;
 	private static StartGameTimer instance = null;
 	public static StartGameTimer Instance
 	{
@@ -35,16 +36,18 @@ public class StartGameTimer : MonoBehaviour
 		{
 			SceneManager.LoadScene("Level 0");
 			currentTime = gameTimer;
+			inGame = true;
 		}
-		if (SceneManager.GetActiveScene().name == "MainMenu")
+		if (SceneManager.GetActiveScene().name == "MainMenu" && inGame == false)
 		{
 			currentTime -= 1 * Time.deltaTime;
 			timerText.text = "Game Starts In: " + Mathf.CeilToInt(currentTime).ToString();
 		}
-		if (SceneManager.GetActiveScene().name != "Main Menu" && SceneManager.GetActiveScene().name != "EndScreen")
+		if (inGame && SceneManager.GetActiveScene().name != "Main Menu" && SceneManager.GetActiveScene().name != "EndScreen")
 		{
+			timerText = GameObject.Find("Canvas").GetComponentInChildren<TextMeshProUGUI>();
 			currentTime -= 1 * Time.deltaTime;
-			print(currentTime);
+			timerText.text = Mathf.CeilToInt(currentTime).ToString();
 		}
 		if (currentTime <= 0 && SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "EndScreen")
 		{
