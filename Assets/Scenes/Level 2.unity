@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d027f3454bddac94b9a8f168ff581d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Level 0
+  nextLevel: Level 3
   door: {fileID: 0}
   player1ThroughDoor: 0
   player2ThroughDoor: 0
