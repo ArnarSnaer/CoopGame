@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d027f3454bddac94b9a8f168ff581d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: TEST
+  nextLevel: Level 0
   door: {fileID: 0}
   player1ThroughDoor: 0
   player2ThroughDoor: 0
@@ -1127,6 +1127,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca128aeb81034604392a399639985931, type: 3}
+--- !u!58 &539752356 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8475915452836044468, guid: ca128aeb81034604392a399639985931,
+    type: 3}
+  m_PrefabInstance: {fileID: 539752355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566260872
 GameObject:
   m_ObjectHideFlags: 0
@@ -13278,7 +13284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 0}
+  canBeInteractedBy: {fileID: 1522401913}
   otherInteractable: {fileID: 1913274893}
   interactedSprite: {fileID: 21300000, guid: 54f97af903ffdc24a975484f1bd997fd, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 46ed5848cb88ea148ac89c9bb3b7fa62, type: 3}
@@ -13418,6 +13424,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239d233fd7341e6449dcf02acd72526b, type: 3}
+--- !u!58 &1522401913 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8103462626974562286, guid: 239d233fd7341e6449dcf02acd72526b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1522401912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913274893
 GameObject:
   m_ObjectHideFlags: 0
@@ -13489,7 +13501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 0}
+  canBeInteractedBy: {fileID: 539752356}
   otherInteractable: {fileID: 1232540503}
   interactedSprite: {fileID: 21300000, guid: 0912d43b3112b034998f5d8c3fd32183, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 899a6ffc43ed1424d95062ef0053fada, type: 3}
