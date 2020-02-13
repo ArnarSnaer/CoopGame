@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	public string nextLevel;
 	public GameObject door;
 	public bool player1ThroughDoor, player2ThroughDoor = false;
+	public AudioSource clearSound;
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
 		//Play Lift Door Animation
 		//Temporary Fix
 		door.transform.position = new Vector3(door.transform.position.x, door.transform.position.y + 1, door.transform.position.z);
+		clearSound.Play();
 	}
 
 	public void ChangeLevel()
