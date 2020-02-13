@@ -6,6 +6,8 @@ public class RespawnSystem : MonoBehaviour
 {
     public GameObject RedPlayer;
     public GameObject BluePlayer;
+    public AudioSource PlayerDeath;
+    public AudioSource PlayerRespawn;
     private Vector3 position1;
     private Vector3 position2;
 
@@ -30,13 +32,17 @@ public class RespawnSystem : MonoBehaviour
 
     IEnumerator RespawnPlayer1()
     {
+        PlayerDeath.Play();
         yield return new WaitForSeconds(3);
         RedPlayer.transform.position = position1;
+        PlayerRespawn.Play();
     }
 
     IEnumerator RespawnPlayer2()
     {
+        PlayerDeath.Play();
         yield return new WaitForSeconds(3);
         BluePlayer.transform.position = position2;
+        PlayerRespawn.Play();
     }
 }

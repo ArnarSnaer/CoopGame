@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 988601348}
+  canBeInteractedBy: {fileID: 0}
   otherInteractable: {fileID: 1834203209}
   interactedSprite: {fileID: -9169103410807245697, guid: da09cd99cb11f8f4eb755634fa526077,
     type: 3}
@@ -4763,12 +4763,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca128aeb81034604392a399639985931, type: 3}
---- !u!58 &901504007 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8475915452836044468, guid: ca128aeb81034604392a399639985931,
-    type: 3}
-  m_PrefabInstance: {fileID: 591579593}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961254769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,12 +5370,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &988601348 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8103462626974562286, guid: 239d233fd7341e6449dcf02acd72526b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1738240419}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1145995039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5430,6 +5418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RedPlayer: {fileID: 458006744}
   BluePlayer: {fileID: 471221864}
+  PlayerDeath: {fileID: 0}
+  PlayerRespawn: {fileID: 0}
 --- !u!19719996 &1145995042
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5483,7 +5473,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6978,7 +6968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 901504007}
+  canBeInteractedBy: {fileID: 0}
   otherInteractable: {fileID: 22642918}
   interactedSprite: {fileID: 21300000, guid: 0912d43b3112b034998f5d8c3fd32183, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 899a6ffc43ed1424d95062ef0053fada, type: 3}
