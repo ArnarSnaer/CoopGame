@@ -346,6 +346,11 @@ PrefabInstance:
       propertyPath: platformObj
       value: 
       objectReference: {fileID: 521162204283386902}
+    - target: {fileID: 2315379624288103289, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 2839731870414601211}
     - target: {fileID: 4186494868642590143, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_SortingOrder
@@ -441,6 +446,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5288754108643154142, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6240895260116445530, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Enabled
@@ -497,6 +507,12 @@ PrefabInstance:
 --- !u!4 &3071819638455477802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4948584556972197135, guid: 481a71eb60bf4bc44b87ee8638458433,
+    type: 3}
+  m_PrefabInstance: {fileID: 7930184459762721573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2839731870414601211 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5288754108643154142, guid: 481a71eb60bf4bc44b87ee8638458433,
     type: 3}
   m_PrefabInstance: {fileID: 7930184459762721573}
   m_PrefabAsset: {fileID: 0}
