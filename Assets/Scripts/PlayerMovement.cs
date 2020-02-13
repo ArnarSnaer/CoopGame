@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGhost;
     private bool cooldownBool = true;
     private bool canTransform = false;
+    private bool justTransformed = false;
+    private float transformWaitTime = 0.25f;
 
 
     // Start is called before the first frame update
@@ -43,14 +45,28 @@ public class PlayerMovement : MonoBehaviour
         tempColor = baseColor;
         tempColor.a = 120f;
         baseSize = tf.localScale;
-        ghostSize = new Vector3 (0.1f, 0.03f, 1f);
+        ghostSize = new Vector3(0.1f, 0.03f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
         h = Input.GetAxisRaw("Horizontal" + playerIndex);
-        v = Input.GetAxisRaw("Vertical" + playerIndex);
+        if (!justTransformed)
+        {
+            v = Input.GetAxisRaw("Vertical" + playerIndex);
+        }
+        else
+        {
+            if (v <= 0)
+            {
+                v = 0;
+            }
+            else
+            {
+                v = Input.GetAxisRaw("Vertical" + playerIndex);
+            }
+        }
     }
 
     IEnumerator Cooldown(float waitTime)
@@ -126,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
         tf.localScale = baseSize;
         sr.color = baseColor;
         isGhost = false;
-        
+
         SetTag();
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
@@ -134,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void TurnToGhost()
     {
+        justTransformed = true;
+        StartCoroutine(reEnableTransform());
         cc.enabled = false;
         rb.gravityScale = 0;
         tf.localScale = ghostSize;
@@ -145,6 +163,11 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(Cooldown(0.5f));
     }
 
+    IEnumerator reEnableTransform()
+    {
+        yield return new WaitForSeconds(transformWaitTime);
+        justTransformed = false;
+    }
     private void SetTag()
     {
         if (isGhost)
@@ -174,12 +197,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Triggers
-    private void OnTriggerEnter2D(Collider2D other) 
-    { 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.gameObject.tag == "GhostZone")
         {
             canTransform = true;
-        } 
+        }
     }
 
     public void ChildLeftZone(Collider2D zone)
