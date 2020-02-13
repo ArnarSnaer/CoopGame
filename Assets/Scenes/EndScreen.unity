@@ -454,6 +454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedPlayer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2839731870414601211, guid: ca128aeb81034604392a399639985931,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.355
+      objectReference: {fileID: 0}
     - target: {fileID: 3071819638455477802, guid: ca128aeb81034604392a399639985931,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15202,6 +15207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BluePlayer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503167370342388385, guid: 239d233fd7341e6449dcf02acd72526b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.355
       objectReference: {fileID: 0}
     - target: {fileID: 3419502940816445296, guid: 239d233fd7341e6449dcf02acd72526b,
         type: 3}
