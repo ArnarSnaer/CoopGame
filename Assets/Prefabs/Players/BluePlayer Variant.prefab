@@ -267,6 +267,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: BluePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5302636310224171590, guid: 7fdc0edd5b8f7db4e871d8f8d7d3473d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5302636311139591545, guid: 7fdc0edd5b8f7db4e871d8f8d7d3473d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -460,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}

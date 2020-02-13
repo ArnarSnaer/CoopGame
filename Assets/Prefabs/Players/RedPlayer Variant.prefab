@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2528955286910799594}
   - component: {fileID: 6322378745706355862}
   - component: {fileID: 1647538557583112385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}

@@ -11,6 +11,8 @@ public class Interactable : MonoBehaviour
     public bool interactedWith = false;
     public bool freezeInteractedWith = false;
     public GameObject gameManager;
+    public AudioSource buttonPress;
+    private bool playSound = true;
     void OnTriggerEnter2D(Collider2D other)
     {
         // If other is player X then true
@@ -18,6 +20,10 @@ public class Interactable : MonoBehaviour
         {
             interactedWith = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = interactedSprite;
+            
+            if(playSound == true)
+            buttonPress.Play();
+
             if (otherInteractable.GetComponent<Interactable>().interactedWith == true)
             {
                 ClearLevel();
@@ -38,6 +44,7 @@ public class Interactable : MonoBehaviour
     public void ClearLevel()
     {
         // If both players are on their interactable objects then the level is clear and they can move on
+        playSound = false;
         interactedWith = true;
         freezeInteractedWith = true;
         gameManager.GetComponent<GameManager>().LevelClear();
