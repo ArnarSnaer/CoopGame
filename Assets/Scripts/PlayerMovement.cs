@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public string playerIndex;
     public float speed = 5f;
     public float jumpHeight = 5f;
+    public AudioSource jumpSound;
     float startSpeed;
 
     public GameObject playerObj;
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGhost;
     private bool cooldownBool = true;
     private bool canTransform = false;
+    private bool justTransformed = false;
+    private float transformWaitTime = 0.25f;
 
 
     // Start is called before the first frame update
@@ -40,14 +43,28 @@ public class PlayerMovement : MonoBehaviour
         platformRb = platformObj.GetComponent<Rigidbody2D>();
         zrb = rb.GetComponentInChildren<Rigidbody2D>();
         tf = GetComponent<Transform>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
         h = Input.GetAxisRaw("Horizontal" + playerIndex);
-        v = Input.GetAxisRaw("Vertical" + playerIndex);
+        if (!justTransformed)
+        {
+            v = Input.GetAxisRaw("Vertical" + playerIndex);
+        }
+        else
+        {
+            // Ignore Down Input
+            if (v <= 0)
+            {
+                v = 0;
+            }
+            else
+            {
+                v = Input.GetAxisRaw("Vertical" + playerIndex);
+            }
+        }
     }
 
     IEnumerator Cooldown(float waitTime)
@@ -89,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             if (v > 0 && grounded)
             {
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
+                jumpSound.Play();
             }
         }
 
@@ -157,12 +175,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Triggers
-    private void OnTriggerEnter2D(Collider2D other) 
-    { 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.gameObject.tag == "GhostZone")
         {
             canTransform = true;
-        } 
+        }
     }
 
     public void ChildLeftZone(Collider2D zone)
