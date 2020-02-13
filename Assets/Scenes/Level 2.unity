@@ -1970,8 +1970,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeInteractedBy: {fileID: 328730610}
   otherInteractable: {fileID: 476246280}
-  interactedSprite: {fileID: 21300000, guid: 54f97af903ffdc24a975484f1bd997fd, type: 3}
-  deInteractedSprite: {fileID: 21300000, guid: 46ed5848cb88ea148ac89c9bb3b7fa62, type: 3}
+  interactedSprite: {fileID: -9169103410807245697, guid: da09cd99cb11f8f4eb755634fa526077,
+    type: 3}
+  deInteractedSprite: {fileID: -3171826077147836033, guid: da09cd99cb11f8f4eb755634fa526077,
+    type: 3}
   interactedWith: 0
   freezeInteractedWith: 0
   gameManager: {fileID: 412394641}
@@ -2013,7 +2015,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3018018900400578528, guid: da09cd99cb11f8f4eb755634fa526077,
+  m_Sprite: {fileID: -3171826077147836033, guid: da09cd99cb11f8f4eb755634fa526077,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
