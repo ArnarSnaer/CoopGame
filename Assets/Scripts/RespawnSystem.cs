@@ -13,14 +13,12 @@ public class RespawnSystem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D badItem)
     {
-        Debug.Log("Touchie");
         if ((badItem.tag == "RedPlayer"))
         {
-           StartCoroutine(RespawnPlayer1());
+            StartCoroutine(RespawnPlayer1());
         }
         if ((badItem.tag == "BluePlayer"))
         {
-            Debug.Log("Touchie2");
             StartCoroutine(RespawnPlayer2());
         }
     }
