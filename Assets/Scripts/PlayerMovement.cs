@@ -129,14 +129,14 @@ public class PlayerMovement : MonoBehaviour
             Color tmp = platformSr.color;
             tmp.a = 1f;
             platformSr.color = tmp;
-            gameObject.layer = 0;
+            platformObj.layer = 0;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
 
         // Normal Layer
         else
         {
-            gameObject.layer = 8;
+            platformObj.layer = 8;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
