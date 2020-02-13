@@ -16,12 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Rigidbody2D playerRb;
     private Rigidbody2D platformRb;
+    private SpriteRenderer platformSr;
     private Rigidbody2D zrb;
     private Transform tf;
     private CircleCollider2D cc;
-
-    private Color baseColor;
-    private Color tempColor;
     private Vector3 baseSize;
     private Vector3 ghostSize;
 
@@ -42,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerRb = playerObj.GetComponent<Rigidbody2D>();
         platformRb = platformObj.GetComponent<Rigidbody2D>();
+        platformSr = platformObj.GetComponent<SpriteRenderer>();
         zrb = rb.GetComponentInChildren<Rigidbody2D>();
         tf = GetComponent<Transform>();
     }
@@ -94,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isGhost)
         {
             // Sprite rotation
-            if (h > 0)      transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            if (h > 0) transform.eulerAngles = new Vector3(0f, 0f, 0f);
             else if (h < 0) transform.eulerAngles = new Vector3(0f, 180f, 0f);
 
             // normal movement
@@ -117,6 +116,9 @@ public class PlayerMovement : MonoBehaviour
             Vector2 tempVect1 = new Vector2(h, v);
             Vector2 moveVect1 = tempVect1 * speed;
             rb.velocity = moveVect1;
+            Color tmp = platformSr.color;
+            tmp.a = 0.66f;
+            platformSr.color = tmp;
         }
 
         // Ghost Layer, freeze
@@ -124,6 +126,9 @@ public class PlayerMovement : MonoBehaviour
         {
             // layer 0 is default, can interact with each other
             // layer 8 is player
+            Color tmp = platformSr.color;
+            tmp.a = 1f;
+            platformSr.color = tmp;
             gameObject.layer = 0;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
@@ -134,7 +139,6 @@ public class PlayerMovement : MonoBehaviour
             gameObject.layer = 8;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
     }
 
     private void TurnToNormal()
@@ -144,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.gravityScale = 1;
         isGhost = false;
-        
+
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
     }

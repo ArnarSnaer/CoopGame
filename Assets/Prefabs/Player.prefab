@@ -261,7 +261,7 @@ MonoBehaviour:
   playerIndex: 1
   speed: 5
   jumpHeight: 3
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 5288754108643154142}
   playerObj: {fileID: 0}
   platformObj: {fileID: 0}
 --- !u!82 &5288754108643154142
