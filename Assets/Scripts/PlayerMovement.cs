@@ -115,6 +115,9 @@ public class PlayerMovement : MonoBehaviour
             Vector2 tempVect1 = new Vector2(h, v);
             Vector2 moveVect1 = tempVect1 * speed;
             rb.velocity = moveVect1;
+            Color tmp = sr.color;
+            tmp.a = 0.66f;
+            sr.color = tmp;
         }
 
         // Ghost Layer, freeze
@@ -123,6 +126,9 @@ public class PlayerMovement : MonoBehaviour
             // change into a solid form
             // layer 0 is default, can interact with each other
             // layer 8 is player
+            Color tmp = sr.color;
+            tmp.a = 1f;
+            sr.color = tmp;
             gameObject.layer = 0;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
@@ -133,7 +139,6 @@ public class PlayerMovement : MonoBehaviour
             gameObject.layer = 8;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
     }
 
     private void TurnToNormal()
