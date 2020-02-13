@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.925
+  orthographic size: 7.8980045
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4391,8 +4391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RedPlayer: {fileID: 1588790871}
   BluePlayer: {fileID: 1212255521}
-  position1: {x: -11.46, y: -5.45, z: 0}
-  position2: {x: -10.39, y: -5.45, z: 0}
 --- !u!19719996 &1674379230
 TilemapCollider2D:
   m_ObjectHideFlags: 0
