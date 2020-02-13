@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2528955286910799594}
   - component: {fileID: 6322378745706355862}
   - component: {fileID: 1647538557583112385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}
@@ -306,11 +306,26 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.1787419
       objectReference: {fileID: 0}
+    - target: {fileID: 41521869646659088, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1186851763306509816, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 81718bc86293a1849afb938793ca1a9b, type: 2}
+    - target: {fileID: 2116413386891310488, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.30313778
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116413386891310488, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.8905067
+      objectReference: {fileID: 0}
     - target: {fileID: 2315379624288103289, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: playerIndex
@@ -331,6 +346,11 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 2839731870414601211}
+    - target: {fileID: 3307773233975191154, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4186494868642590143, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_SortingOrder
@@ -364,12 +384,12 @@ PrefabInstance:
     - target: {fileID: 4948584556972197135, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.23
+      value: 2.5989454
       objectReference: {fileID: 0}
     - target: {fileID: 4948584556972197135, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: -1.754692
       objectReference: {fileID: 0}
     - target: {fileID: 4948584556972197135, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
@@ -466,6 +486,11 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.64
       objectReference: {fileID: 0}
+    - target: {fileID: 8089334332439399543, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Name
@@ -474,12 +499,12 @@ PrefabInstance:
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9123760820287473811, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: RedPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4186494868642590143, guid: 481a71eb60bf4bc44b87ee8638458433, type: 3}
