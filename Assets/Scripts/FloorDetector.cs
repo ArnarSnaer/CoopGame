@@ -15,7 +15,7 @@ public class FloorDetector : MonoBehaviour
 
     // Update is called once per frame
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
@@ -23,7 +23,7 @@ public class FloorDetector : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
@@ -31,7 +31,7 @@ public class FloorDetector : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "RedPlayerPlatform" || other.gameObject.tag == "BluePlayerPlatform")
         {
