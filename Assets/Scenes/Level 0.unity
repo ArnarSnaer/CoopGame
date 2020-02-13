@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 0}
+  canBeInteractedBy: {fileID: 1732647488}
   otherInteractable: {fileID: 1289742745}
   interactedSprite: {fileID: 21300000, guid: 0912d43b3112b034998f5d8c3fd32183, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 899a6ffc43ed1424d95062ef0053fada, type: 3}
@@ -2881,7 +2881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe87e79bfc4a54ab88d69ce05efea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeInteractedBy: {fileID: 0}
+  canBeInteractedBy: {fileID: 1347418356}
   otherInteractable: {fileID: 990855798}
   interactedSprite: {fileID: 21300000, guid: 54f97af903ffdc24a975484f1bd997fd, type: 3}
   deInteractedSprite: {fileID: 21300000, guid: 46ed5848cb88ea148ac89c9bb3b7fa62, type: 3}
@@ -3293,6 +3293,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!58 &1347418356 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8103462626974562286, guid: 239d233fd7341e6449dcf02acd72526b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1212255520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1359742605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +3975,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!58 &1732647488 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8475915452836044468, guid: ca128aeb81034604392a399639985931,
+    type: 3}
+  m_PrefabInstance: {fileID: 1588790870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863296919
 GameObject:
   m_ObjectHideFlags: 0

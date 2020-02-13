@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         //Play Lift Door Animation
         //Temporary Fix
-        door.transform.position = new Vector3(door.transform.position.x, door.transform.position.y + 1, door.transform.position.z);
+        door.SetActive(false);
         clearSound.Play();
     }
 
