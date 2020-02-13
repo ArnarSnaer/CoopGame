@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            // Ignore Down Input
             if (v <= 0)
             {
                 v = 0;
