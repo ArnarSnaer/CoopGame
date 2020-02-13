@@ -1959,25 +1959,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5632962172123629660, guid: ca128aeb81034604392a399639985931,
-        type: 3}
-      propertyPath: jumpSound
-      value: 
-      objectReference: {fileID: 539752357}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca128aeb81034604392a399639985931, type: 3}
---- !u!58 &539752356 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8475915452836044468, guid: ca128aeb81034604392a399639985931,
-    type: 3}
-  m_PrefabInstance: {fileID: 539752355}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &539752357 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1530761326426192549, guid: ca128aeb81034604392a399639985931,
-    type: 3}
-  m_PrefabInstance: {fileID: 539752355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566260872
 GameObject:
   m_ObjectHideFlags: 0
@@ -15657,25 +15640,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5474553198915477766, guid: 239d233fd7341e6449dcf02acd72526b,
-        type: 3}
-      propertyPath: jumpSound
-      value: 
-      objectReference: {fileID: 1522401914}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239d233fd7341e6449dcf02acd72526b, type: 3}
---- !u!58 &1522401913 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8103462626974562286, guid: 239d233fd7341e6449dcf02acd72526b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1522401912}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1522401914 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1219229966461850623, guid: 239d233fd7341e6449dcf02acd72526b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1522401912}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913274893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7173874430342514595, guid: c80392ee635d04f48930ea0b1880a6fa,
@@ -15765,7 +15731,7 @@ PrefabInstance:
         type: 3}
       propertyPath: canBeInteractedBy
       value: 
-      objectReference: {fileID: 1522401913}
+      objectReference: {fileID: 0}
     - target: {fileID: 113296417243811679, guid: 57662913ca48fa04b86c469f55bd7018,
         type: 3}
       propertyPath: otherInteractable
@@ -15849,7 +15815,7 @@ PrefabInstance:
         type: 3}
       propertyPath: canBeInteractedBy
       value: 
-      objectReference: {fileID: 539752356}
+      objectReference: {fileID: 0}
     - target: {fileID: 7173874430342514622, guid: c80392ee635d04f48930ea0b1880a6fa,
         type: 3}
       propertyPath: otherInteractable
