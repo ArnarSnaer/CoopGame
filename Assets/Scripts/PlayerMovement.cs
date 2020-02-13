@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource jumpSound;
     float startSpeed;
 
+
     public GameObject playerObj;
     public GameObject platformObj;
     private Rigidbody2D rb;
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool cooldownBool = true;
     private bool canTransform = false;
     private bool justTransformed = false;
-    private float transformWaitTime = 0.25f;
+    //private float transformWaitTime = 0.25f;
 
 
     // Start is called before the first frame update
