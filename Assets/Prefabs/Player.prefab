@@ -152,8 +152,6 @@ GameObject:
   - component: {fileID: 1186851763306509816}
   - component: {fileID: 4186494868642590143}
   - component: {fileID: 2315379624288103289}
-  - component: {fileID: 1994299630035385745}
-  - component: {fileID: 261797721865499547}
   m_Layer: 8
   m_Name: Player
   m_TagString: RedPlayer
@@ -262,45 +260,3 @@ MonoBehaviour:
   playerIndex: 1
   speed: 5
   jumpHeight: 3
---- !u!58 &1994299630035385745
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123760820287473811}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 81718bc86293a1849afb938793ca1a9b, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.5842607}
-  serializedVersion: 2
-  m_Radius: 2.5093234
---- !u!61 &261797721865499547
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123760820287473811}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 81718bc86293a1849afb938793ca1a9b, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.045388937, y: 2.1802478}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.1493225, y: 5.879504}
-  m_EdgeRadius: 0
