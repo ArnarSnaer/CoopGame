@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource jumpSound;
     float startSpeed;
 
+    public GameObject playerObj;
+    public GameObject platformObj;
     private Rigidbody2D rb;
+    private Rigidbody2D playerRb;
+    private Rigidbody2D platformRb;
     private Rigidbody2D zrb;
     private Transform tf;
-    private SpriteRenderer sr;
     private CircleCollider2D cc;
 
     private Color baseColor;
@@ -36,16 +39,10 @@ public class PlayerMovement : MonoBehaviour
     {
         startSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
+        playerRb = playerObj.GetComponent<Rigidbody2D>();
+        platformRb = platformObj.GetComponent<Rigidbody2D>();
         zrb = rb.GetComponentInChildren<Rigidbody2D>();
         tf = GetComponent<Transform>();
-        sr = GetComponent<SpriteRenderer>();
-        cc = GetComponent<CircleCollider2D>();
-
-        baseColor = sr.color;
-        tempColor = baseColor;
-        tempColor.a = 120f;
-        baseSize = tf.localScale;
-        ghostSize = new Vector3(0.1f, 0.03f, 1f);
     }
 
     // Update is called once per frame
@@ -95,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
         // Movement
         if (!isGhost)
         {
+            // Sprite rotation
+            if (h > 0)      transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            else if (h < 0) transform.eulerAngles = new Vector3(0f, 180f, 0f);
+
             // normal movement
             Vector2 tempVect1 = new Vector2(h, 0);
             Vector2 moveVect1 = tempVect1 * speed;
@@ -120,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
         // Ghost Layer, freeze
         if (isGhost && h == 0 && v == 0)
         {
-            // change into a solid form
             // layer 0 is default, can interact with each other
             // layer 8 is player
             gameObject.layer = 0;
@@ -138,49 +138,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void TurnToNormal()
     {
-        cc.enabled = true;
-        rb.gravityScale = 1;
-        tf.localScale = baseSize;
-        sr.color = baseColor;
-        isGhost = false;
+        platformObj.SetActive(false);
+        playerObj.SetActive(true);
 
-        SetTag();
+        rb.gravityScale = 1;
+        isGhost = false;
+        
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
     }
 
     private void TurnToGhost()
     {
-        justTransformed = true;
-        StartCoroutine(reEnableTransform());
-        cc.enabled = false;
+        playerObj.SetActive(false);
+        platformObj.SetActive(true);
+
         rb.gravityScale = 0;
-        tf.localScale = ghostSize;
-        sr.color = tempColor;
         isGhost = true;
 
-        SetTag();
         cooldownBool = false;
         StartCoroutine(Cooldown(0.5f));
-    }
-
-    IEnumerator reEnableTransform()
-    {
-        yield return new WaitForSeconds(transformWaitTime);
-        justTransformed = false;
-    }
-    private void SetTag()
-    {
-        if (isGhost)
-        {
-            if (playerIndex == "1") gameObject.tag = "RedPlayerPlatform";
-            else gameObject.tag = "BluePlayerPlatform";
-        }
-        else
-        {
-            if (playerIndex == "1") gameObject.tag = "RedPlayer";
-            else gameObject.tag = "BluePlayer";
-        }
     }
 
     // Colliders
