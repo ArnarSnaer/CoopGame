@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public string playerIndex;
     public float speed = 5f;
     public float jumpHeight = 5f;
+    public AudioSource jumpSound;
     float startSpeed;
 
     private Rigidbody2D rb;
@@ -87,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
             if (v > 0 && grounded)
             {
                 rb.velocity = rb.velocity + Vector2.up * jumpHeight;
+                jumpSound.Play();
             }
         }
 

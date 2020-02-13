@@ -566,6 +566,11 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2315379624288103289, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 981602874}
     - target: {fileID: 4186494868642590143, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_SortingOrder
@@ -648,6 +653,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481a71eb60bf4bc44b87ee8638458433, type: 3}
+--- !u!82 &981602874 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8877711492199422336, guid: 481a71eb60bf4bc44b87ee8638458433,
+    type: 3}
+  m_PrefabInstance: {fileID: 981602873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &990855798
 GameObject:
   m_ObjectHideFlags: 0
@@ -8825,6 +8836,11 @@ PrefabInstance:
       propertyPath: playerIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2315379624288103289, guid: 481a71eb60bf4bc44b87ee8638458433,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 1939263890}
     - target: {fileID: 4186494868642590143, guid: 481a71eb60bf4bc44b87ee8638458433,
         type: 3}
       propertyPath: m_SortingOrder
@@ -8912,6 +8928,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481a71eb60bf4bc44b87ee8638458433, type: 3}
+--- !u!82 &1939263890 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8877711492199422336, guid: 481a71eb60bf4bc44b87ee8638458433,
+    type: 3}
+  m_PrefabInstance: {fileID: 1939263889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!58 &1973674802 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 1994299630035385745, guid: 481a71eb60bf4bc44b87ee8638458433,

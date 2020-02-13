@@ -1455,11 +1455,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5632962172123629660, guid: ca128aeb81034604392a399639985931,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 539752357}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca128aeb81034604392a399639985931, type: 3}
 --- !u!58 &539752356 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 8475915452836044468, guid: ca128aeb81034604392a399639985931,
+    type: 3}
+  m_PrefabInstance: {fileID: 539752355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &539752357 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1530761326426192549, guid: ca128aeb81034604392a399639985931,
     type: 3}
   m_PrefabInstance: {fileID: 539752355}
   m_PrefabAsset: {fileID: 0}
@@ -14423,11 +14434,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5474553198915477766, guid: 239d233fd7341e6449dcf02acd72526b,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 1522401914}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239d233fd7341e6449dcf02acd72526b, type: 3}
 --- !u!58 &1522401913 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 8103462626974562286, guid: 239d233fd7341e6449dcf02acd72526b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1522401912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1522401914 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1219229966461850623, guid: 239d233fd7341e6449dcf02acd72526b,
     type: 3}
   m_PrefabInstance: {fileID: 1522401912}
   m_PrefabAsset: {fileID: 0}
