@@ -49,13 +49,10 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{
 		h = Input.GetAxisRaw("Horizontal" + playerIndex);
-		if (!justTransformed)
+		v = Input.GetAxisRaw("Vertical" + playerIndex);
+		if (justTransformed)
 		{
-			v = Input.GetAxisRaw("Vertical" + playerIndex);
-		}
-		else
-		{
-			// Ignore Down Input
+			//Ignore downward movement if just transformed
 			if (v <= 0)
 			{
 				v = 0;
